@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="teal_200">@color/color_main</color>
+    <color name="teal_700">@color/color_main</color>
+
+
+    <color name="black">#FF000000</color>
+
+    <color name="colorPrimary">@color/color_main</color>
+    <color name="colorPrimaryDark">@color/color_main</color>
+    <color name="colorAccent">@color/color_main</color>
+
+    <color name="trangle">#00000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="page_background">@color/c_f4f4f4</color>
+
+    <!--半透明-->
+
+    <color name="c_80000000">#80000000</color>
+    <!-- APP主背景颜色 -->
+    <color name="app_bg">@color/c_367cff</color>
+
+    <!-- 分隔线颜色 -->
+    <color name="c_e6">#e6e6e6</color>
+
+    <!--点击遮罩效果-->
+    <color name="color_click">#19000000</color>
+
+    <!-- APP主题颜色 -->
+    <color name="color_main">@color/c_367cff</color>
+
+    <color name="color_text_hint">#999999</color>
+
+    <!-- 用户协议超链接颜色-->
+    <color name="color_agreement_dark_blue">#0080FF</color>
+    <color name="color_agreement_light_blue">#800080FF</color>
+
+    <!--主题风格btn-->
+    <color name="btn_on">@color/c_367cff</color>
+    <color name="btn_off">@color/c_2dadff</color>
+
+    <!--字体颜色btn-->
+    <color name="text_color_dark">@color/c_333333</color>
+    <!-- 字体浅-->
+    <color name="text_color_light">@color/c_999999</color>
+
+
+    <color name="c_333333">#333333</color>
+    <color name="c_666666">#666666</color>
+    <color name="c_999999">#999999</color>
+    <color name="c_949494">#949494</color>
+    <color name="c_f5f5f5">#F5F5F5</color>
+    <color name="c_1a95fc">#1A95FC</color>
+    <color name="c_3582ff">#3582FF</color>
+    <color name="c_e6e6e6">#e6e6e6</color>
+    <color name="c_dedede">#dedede</color>
+    <color name="c_f4f4f4">#F4F4F4</color>
+    <color name="c_e0e0e0">#E0E0E0</color>
+    <color name="c_f7f7f7">#F7F7F7</color>
+    <color name="c_fc9b22">#FC9B22</color>
+    <color name="c_f9f9f9">#F9F9F9</color>
+    <color name="text_dark">@color/c_333333</color>
+    <color name="text_light">@color/c_bfbfbf</color>
+    <color name="c_bfbfbf">#BFBFBF</color>
+    <color name="c_8c8b8b">#8C8B8B</color>
+    <color name="c_ff7a11">#FF7A11</color>
+    <color name="c_e32126">#E32126</color>
+    <color name="c_e6000000">#E6000000</color>
+    <color name="c_37394D">#37394D</color>
+    <color name="c_9a9a9a">#9a9a9a</color>
+    <color name="c_e1e1e1">#e1e1e1</color>
+    <color name="trade_c_fff8f8f8">#fff8f8f8</color>
+    <color name="trade_c_fc571a">#FC571A</color>
+    <color name="trade_c_91e6e6e6">#91e6e6e6</color>
+    <color name="trade_c_07BA19">#07BA19</color>
+    <color name="c_0091ff">#0091FF</color>
+    <color name="c_3584ff">#3584FF</color>
+    <color name="c_367cff">#367CFF</color>
+    <color name="c_2dadff">#2DADFF</color>
+    <color name="c_30367cff">#35367CFF</color>
+    <color name="c_302dadff">#352DADFF</color>
+    <color name="c_348bff">#348BFF</color>
+    <color name="c_3292ff">#3292FF</color>
+    <color name="c_bebcbc">#bebcbc</color>
+    <color name="c_a0a0a0">#a0a0a0</color>
+    <color name="c_3195FF">#3195FF</color>
+    <color name="c_acc9ff">#acc9ff</color>
+    <color name="c_bcbec1">#BCBEC1</color>
+</resources>

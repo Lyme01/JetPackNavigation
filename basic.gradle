@@ -1,0 +1,45 @@
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 30
+        versionCode 1000
+        versionName "1.0.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+
+    viewBinding {
+        enabled = true
+    }
+
+    lintOptions {
+        disable "Instantiatable"
+    }
+
+    buildFeatures {
+        // Enables Jetpack Compose for this module
+        compose = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+        useIR = true
+    }
+
+    composeOptions {
+        kotlinCompilerVersion = "1.5.31"
+        kotlinCompilerExtensionVersion = "1.0.5"
+    }
+}

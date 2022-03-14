@@ -1,0 +1,84 @@
+
+w
+java:S3008"\Rename this field "NET_CNNT_BAIDU_OK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åš™Øûÿÿÿÿ
+|
+java:S3008"aRename this field "NET_CNNT_BAIDU_TIMEOUT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âšÏıÿÿÿÿ
+p
+java:S3008#"ZRename this field "NET_NOT_PREPARE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£Í¢ì
+o
+java:S3008'"TRename this field "NET_ERROR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ış†ùÿÿÿÿ
+h
+java:S3008+"RRename this field "TIMEOUT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢¥É
+P
+java:S1118":Add a private constructor to hide the implicit public one.(ø×Ç
+N
+java:S1874:"3Remove this use of "NetworkInfo"; it is deprecated.(´ÒßÂúÿÿÿÿ
+W
+java:S1874:"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(´ÒßÂúÿÿÿÿ
+N
+java:S1874;"3Remove this use of "isAvailable"; it is deprecated.(ÒÖÄÕÿÿÿÿÿ
+c
+java:S1858K"H"getHostAddress" returns a string, there's no need to call "toString()".(µöûÇúÿÿÿÿ
+I
+java:S1874`"3Remove this use of "NetworkInfo"; it is deprecated.(¾™‡æ
+R
+java:S1874`"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(¾™‡æ
+N
+java:S1874b"3Remove this use of "isAvailable"; it is deprecated.(Ñ‚òÈûÿÿÿÿ
+N
+java:S1874b"3Remove this use of "isConnected"; it is deprecated.(Ñ‚òÈûÿÿÿÿ
+`
+java:S1124x"EReorder the modifiers to comply with the Java Language Specification.(ÙõÊíÿÿÿÿÿ
+?	java:S108")Either remove or fill this block of code.(ï­£Ä
+O
+java:S1874”"3Remove this use of "NetworkInfo"; it is deprecated.(àî›£úÿÿÿÿ
+X
+java:S1874”"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(àî›£úÿÿÿÿ
+]
+java:S1126•"AReplace this if-then-else statement by a single return statement.(Öô©šıÿÿÿÿ
+K
+java:S1874–"/Remove this use of "getType"; it is deprecated.(¾â²·øÿÿÿÿ
+O
+java:S1874–"3Remove this use of "TYPE_MOBILE"; it is deprecated.(¾â²·øÿÿÿÿ
+O
+java:S1874¥"3Remove this use of "NetworkInfo"; it is deprecated.(àî›£úÿÿÿÿ
+X
+java:S1874¥"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(àî›£úÿÿÿÿ
+]
+java:S1126¦"AReplace this if-then-else statement by a single return statement.(Öô©šıÿÿÿÿ
+K
+java:S1874§"/Remove this use of "getType"; it is deprecated.(–ÚƒÄúÿÿÿÿ
+M
+java:S1874§"1Remove this use of "TYPE_WIFI"; it is deprecated.(–ÚƒÄúÿÿÿÿ
+O
+java:S1874¶"3Remove this use of "NetworkInfo"; it is deprecated.(àî›£úÿÿÿÿ
+X
+java:S1874¶"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(àî›£úÿÿÿÿ
+]
+java:S1126·"AReplace this if-then-else statement by a single return statement.(Öô©šıÿÿÿÿ
+I
+java:S1874¸"2Remove this use of "getSubtype"; it is deprecated.(ö«Ùß
+N
+java:S1874¹"2Remove this use of "getSubtype"; it is deprecated.(ÂŠ›ÿÿÿÿÿ
+H
+java:S1874º"2Remove this use of "getSubtype"; it is deprecated.(ª›
+e
+java:S1104"OMake url a static final constant or non-public and provide accessors if needed.(èÀ£¬
+x
+java:S1104"]Make NET_CNNT_BAIDU_OK a static final constant or non-public and provide accessors if needed.(åš™Øûÿÿÿÿ
+}
+java:S1104"bMake NET_CNNT_BAIDU_TIMEOUT a static final constant or non-public and provide accessors if needed.(âšÏıÿÿÿÿ
+q
+java:S1104#"[Make NET_NOT_PREPARE a static final constant or non-public and provide accessors if needed.(£Í¢ì
+p
+java:S1104'"UMake NET_ERROR a static final constant or non-public and provide accessors if needed.(‘ış†ùÿÿÿÿ
+?
+java:S1444")Make this "public static url" field final(èÀ£¬
+R
+java:S1444"7Make this "public static NET_CNNT_BAIDU_OK" field final(åš™Øûÿÿÿÿ
+W
+java:S1444"<Make this "public static NET_CNNT_BAIDU_TIMEOUT" field final(âšÏıÿÿÿÿ
+K
+java:S1444#"5Make this "public static NET_NOT_PREPARE" field final(£Í¢ì
+J
+java:S1444'"/Make this "public static NET_ERROR" field final(‘ış†ùÿÿÿÿ

@@ -1,0 +1,18 @@
+plugins {
+    id 'com.android.application'
+}
+apply from: "../basic.gradle"
+
+android {
+    defaultConfig {
+        applicationId "com.navigation.in"
+
+    }
+}
+
+dependencies {
+    implementation project(path: ':base')
+
+}
+
+
