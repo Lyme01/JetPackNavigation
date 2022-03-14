@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/BaseNavigation/app/src/main/res/layout/activity_main.xml" value="0.3489583333333333" />
+        <entry key="..\:/BaseNavigation/app/src/main/res/layout/fragment_main.xml" value="0.18" />
         <entry key="..\:/BaseNavigation/base/src/main/res/drawable/drawable.xml" value="0.24074074074074073" />
+        <entry key="..\:/BaseNavigation/base/src/main/res/drawable/selector_main_rb_color.xml" value="0.24351851851851852" />
         <entry key="..\:/BaseNavigation/base/src/main/res/drawable/sp_bg_toast.xml" value="0.24074074074074073" />
         <entry key="..\:/BaseNavigation/base/src/main/res/layout/aabb_item_action_bar.xml" value="0.3489583333333333" />
         <entry key="..\:/BaseNavigation/base/src/main/res/layout/dialog_loading.xml" value="0.3489583333333333" />
