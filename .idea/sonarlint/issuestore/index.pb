@@ -1,6 +1,4 @@
 
-h
-8app/src/main/java/com/exa/basenavigation/MainActivity.kt,d\5\d5aaff920c4b34dd701c62747bebe2fc1849b543
 W
 'base/src/main/java/com/exa/base/Text.kt,3\4\34cc8ae36f7ef49060431b734cfff6409d63f723
 c
@@ -9,8 +7,6 @@ b
 2base/src/main/java/com/exa/base/ext/ResourceExt.kt,3\7\3725f513740bd11f511873a3eb957ce58553f5e8
 d
 4base/src/main/java/com/exa/base/ext/NavigationExt.kt,4\b\4bc78a456fbcf4314096fa8221ba0a01f1056c70
-t
-Dbase/src/main/java/com/exa/base/util/GlideCircleBorderTransform.java,8\c\8c20c034a8d65769f1caad329e8998ecc19a9378
 a
 1base/src/main/java/com/exa/base/http/exc/Error.kt,5\b\5b8563d78dd705d8b3747a2fdb31da19dfd465e7
 k
@@ -23,8 +19,6 @@ m
 =base/src/main/java/com/exa/base/http/state/NetStateManager.kt,e\0\e005b1546fc8add1c4308fec1e0b6bfbce8c5e15
 q
 Abase/src/main/java/com/exa/base/http/state/NetworkStateReceive.kt,b\3\b3a4d9e566e250bbea53c82c1b5a684eb4768149
-c
-3base/src/main/java/com/exa/base/http/AppRetrofit.kt,a\c\ac0afa2967b17acd5f4067aa2debf54b837891d5
 d
 4base/src/main/java/com/exa/base/bean/BaseResponse.kt,3\1\313fb408e8ee4d872d9bcee98ca3ced4f6fe4bb3
 h

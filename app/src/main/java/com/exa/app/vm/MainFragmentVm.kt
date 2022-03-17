@@ -1,10 +1,11 @@
 package com.exa.app.vm
 
-import android.view.View
-import androidx.lifecycle.MutableLiveData
-import com.exa.base.base.BaseRepository
+
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import com.exa.app.repo.MainRepository
 import com.exa.base.base.BaseVm
-import com.exa.base.http.exc.AppException
+
 
 /**
  * @author wwq
@@ -12,6 +13,17 @@ import com.exa.base.http.exc.AppException
  * @date :2022/3/14
  */
 
-class MainFragmentVm:BaseVm<BaseRepository>() {
+class MainFragmentVm:BaseVm<MainRepository>() {
+  private var currentFragment: Fragment?=null
+    /**
+     * 切换 Fragment
+     */
+  fun switchFragment(fragmentManager: FragmentManager,id:Int){
+     val position=mRepository.getIdToPosition(id)
+     val target=mRepository.fragments[position]
+     mRepository.switch(fragmentManager,currentFragment,target)
+     currentFragment=target
+  }
 
+    fun  getButtonId(position:Int)=mRepository.getPositionToId(position)
 }

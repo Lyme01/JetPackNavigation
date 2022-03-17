@@ -17,7 +17,7 @@ import java.lang.reflect.ParameterizedType
  * @description:
  * @date :2022/1/17
  */
-
+@Suppress("UNCHECKED_CAST")
 abstract class BaseActivity<VM:BaseVm<*>,VB:ViewBinding>:FragmentActivity() {
     protected lateinit var vm:VM
     protected lateinit var binding: VB

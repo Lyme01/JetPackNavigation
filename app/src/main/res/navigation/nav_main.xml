@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation">
+    app:startDestination="@id/welcomeFragment"
+    android:id="@+id/nav_main">
 
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.exa.app.ui.MainFragment">
+        <action
+            android:id="@+id/action_home"
+            app:destination="@id/nav_home"/>
+        <action
+            android:id="@+id/action_mine"
+            app:destination="@id/nav_mine"/>
+        <action
+            android:id="@+id/action_square"
+            app:destination="@id/nav_square"/>
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.exa.app.ui.WelcomeFragment"/>
 </navigation>

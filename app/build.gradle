@@ -12,6 +12,9 @@ android {
 
 dependencies {
     implementation project(path: ':base')
+    implementation project(path: ':home')
+    implementation project(path: ':square')
+    implementation project(path: ':mine')
 
 }
 

@@ -22,8 +22,8 @@ fun ImageView.loadCircle(any: Any) = GlideUtil.loadCircle(this, any)
 /**
  * 加载带边框圆形图片
  */
-fun ImageView.loadBorderCircle(any: Any, borderWidth: Float = getDimension(R.dimen.dp_2), borderColor: Int = Color.WHITE) =
-    GlideUtil.loadBorderCircle(this, any, borderWidth, borderColor)
+//fun ImageView.loadBorderCircle(any: Any, borderWidth: Float = getDimension(R.dimen.dp_2), borderColor: Int = Color.WHITE) =
+//    GlideUtil.loadBorderCircle(this, any, borderWidth, borderColor)
 
 /**
  * 加载圆角图片

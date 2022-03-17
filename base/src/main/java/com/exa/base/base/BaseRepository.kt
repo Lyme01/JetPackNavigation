@@ -17,7 +17,7 @@ import java.lang.reflect.Method
  * @date :2022/1/17
  */
 
-class BaseRepository {
+open class BaseRepository {
     companion object {
         private const val SERVER_CODE = "0000"
     }

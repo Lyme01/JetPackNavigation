@@ -24,12 +24,12 @@ object GlideUtil {
     }
 
 
-    fun loadBorderCircle(imageView: ImageView, any: Any, borderWidth: Float, borderColor: Int) {
-        Glide.with(imageView.context)
-            .load(any)
-            .apply(borderCircleOption(borderWidth, borderColor))
-            .into(imageView)
-    }
+//    fun loadBorderCircle(imageView: ImageView, any: Any, borderWidth: Float, borderColor: Int) {
+//        Glide.with(imageView.context)
+//            .load(any)
+//            .apply(borderCircleOption(borderWidth, borderColor))
+//            .into(imageView)
+//    }
 
     fun loadRound(imageView: ImageView, any: Any, round: Int) {
         Glide.with(imageView.context)
@@ -47,8 +47,8 @@ object GlideUtil {
             .diskCacheStrategy(DiskCacheStrategy.NONE) //缓存策略
     }
 
-    private fun borderCircleOption(borderWidth: Float, borderColor: Int): RequestOptions {
-        return circleOption().transform(GlideCircleBorderTransform(borderWidth, borderColor))
-
-    }
+//    private fun borderCircleOption(borderWidth: Float, borderColor: Int): RequestOptions {
+//        return circleOption().transform(GlideCircleBorderTransform(borderWidth, borderColor))
+//
+//    }
 }
