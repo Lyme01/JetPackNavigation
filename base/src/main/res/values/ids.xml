@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <item name="nav_main" type="id"/>
+<item name="action_home" type="id"/>
+<item name="action_to_global_main" type="id"/>
 </resources>

@@ -21,7 +21,8 @@ android {
     lintOptions {
         disable "Instantiatable"
     }
-
+    //... 即使你不使用DataBinding也要打开其开关
+    buildFeatures.dataBinding = true
     buildFeatures {
         // Enables Jetpack Compose for this module
         compose = true

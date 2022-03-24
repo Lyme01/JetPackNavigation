@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import com.exa.base.util.LogUtil
+import com.exa.base.util.StatusBarUtil
 import com.exa.base.util.ToastUtil
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
@@ -90,6 +91,14 @@ abstract class AbstractFragment<VM:BaseVm<*>>(private val backPress:Boolean):Fra
             ToastUtil.instance.cancel()
             activity?.finish()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (isVisible&&isFirstLoad){
+            StatusBarUtil.setStatusBar(activity,isImmersive(),isDark())
+        }
+        lazyInit()
     }
 
     /**

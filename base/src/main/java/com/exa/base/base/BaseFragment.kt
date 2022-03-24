@@ -36,7 +36,6 @@ abstract class BaseFragment<VM : BaseVm<*>, VB : ViewBinding>(
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        mContext=context
         mActivity=context as FragmentActivity
     }
 

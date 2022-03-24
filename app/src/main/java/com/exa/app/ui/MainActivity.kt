@@ -4,6 +4,7 @@ import com.exa.app.databinding.ActivityMainBinding
 import com.exa.app.vm.MainActivityVm
 import com.exa.base.base.BaseActivity
 import com.exa.base.base.eventVm
+import com.exa.base.util.ToastUtil
 
 
 /**
@@ -21,7 +22,10 @@ class MainActivity:BaseActivity<MainActivityVm, ActivityMainBinding>() {
         super.initListener()
         //协程的错误，可能是网络请求，可能是其他
         eventVm.fail.observe(this){
-
+         vm.exceptionHandle(binding.MainFragmentContainer,it)
+        }
+        vm.toastMsg.observe(this){
+            ToastUtil.instance.show(this,it)
         }
     }
 }

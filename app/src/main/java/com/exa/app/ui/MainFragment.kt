@@ -14,12 +14,10 @@ import com.exa.base.base.eventVm
 
 class MainFragment:BaseFragment<MainFragmentVm,FragmentMainBinding>(true) {
     override fun initData() {
-        super.initData()
         binding.mainRb1.isChecked=true
     }
 
     override fun initListener() {
-        super.initListener()
         binding.mainRg.setOnCheckedChangeListener { _, i ->
        vm.switchFragment(childFragmentManager,i)
         }
@@ -29,7 +27,6 @@ class MainFragment:BaseFragment<MainFragmentVm,FragmentMainBinding>(true) {
     }
 
     override fun onBackPressed() {
-        super.onBackPressed()
         exitApp()
     }
 }

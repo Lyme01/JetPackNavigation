@@ -6,6 +6,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
+        android:label="MainFragment"
         android:name="com.exa.app.ui.MainFragment">
         <action
             android:id="@+id/action_home"
@@ -20,4 +21,11 @@
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.exa.app.ui.WelcomeFragment"/>
+    <action
+        android:id="@id/action_to_global_main"
+        app:destination="@id/mainFragment"
+        app:launchSingleTop="true" />
+    <include app:graph="@navigation/nav_home" />
+    <include app:graph="@navigation/nav_mine" />
+    <include app:graph="@navigation/nav_square" />
 </navigation>

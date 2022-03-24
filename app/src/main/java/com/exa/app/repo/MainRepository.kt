@@ -16,11 +16,12 @@ import com.exa.square.ui.SquareFragment
  */
 
 class MainRepository:BaseRepository() {
-    val fragments= listOf<BaseFragment<*,*>>(
+    val fragments = listOf<BaseFragment<*, *>>(
       HomeFragment(),
-      SquareFragment(),
-      MineFragment()
+      MineFragment(),
+      SquareFragment()
     )
+
 
     fun switch(
         manager:FragmentManager,
