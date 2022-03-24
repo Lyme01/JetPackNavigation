@@ -62,6 +62,4 @@ object AppRetrofit {
         SharedPrefsCookiePersistor(appContext)
     )
 
-
-
 }

@@ -3,6 +3,7 @@ package com.exa.app.ui
 
 import android.view.View
 import android.widget.LinearLayout.HORIZONTAL
+import androidx.compose.ui.graphics.Color
 import androidx.core.view.isVisible
 import androidx.viewpager2.widget.ViewPager2
 import com.drake.brv.utils.linear
@@ -14,6 +15,7 @@ import com.exa.app.databinding.ItemDotBinding
 import com.exa.app.databinding.WelcomeFragmentBinding
 import com.exa.app.vm.WelcomeVm
 import com.exa.base.base.BaseFragment
+import com.exa.base.ext.buildSpannableString
 import com.exa.base.ext.nav
 import com.exa.base.ext.navigateAction
 import com.exa.base.model.DotModel
@@ -46,6 +48,16 @@ class WelcomeFragment : BaseFragment<WelcomeVm, WelcomeFragmentBinding>(false) {
 
     override fun initViews(root: View) {
         super.initViews(root)
+//        binding.tv.buildSpannableString {
+//            addText("我已详细阅读并同意"){
+//                setFontSize(16,true)
+//                setBackgroundColor(R.color.color_click)
+//            }
+//            addText("《隐私政策》"){
+//                setColor(R.color.color_main)
+//                setFontSize(14,true)
+//            }
+//        }
         binding.vpPager.adapter = welcomeAdapter
         binding.vpPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
