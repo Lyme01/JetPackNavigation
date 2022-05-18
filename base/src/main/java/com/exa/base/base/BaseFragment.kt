@@ -26,7 +26,7 @@ import java.lang.reflect.Type
  * @date :2022/1/17
  */
 @Suppress("UNCHECKED_CAST")
-abstract class BaseFragment<VM : BaseVm<*>, VB : ViewBinding>(
+abstract class BaseFragment<VM : BaseVm, VB : ViewBinding>(
     private val navigationBar: Boolean = false,
    val backPress: Boolean = false
 ) :AbstractFragment<VM>(backPress = backPress) {

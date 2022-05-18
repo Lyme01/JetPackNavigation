@@ -1,6 +1,5 @@
 package com.exa.app.vm
 
-import com.exa.base.base.BaseRepository
 import com.exa.base.base.BaseVm
 
 /**
@@ -9,5 +8,5 @@ import com.exa.base.base.BaseVm
  * @date :2022/3/17
  */
 
-class WelcomeVm:BaseVm<BaseRepository>(){
+class WelcomeVm:BaseVm(){
 }

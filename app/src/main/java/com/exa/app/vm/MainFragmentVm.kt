@@ -13,8 +13,9 @@ import com.exa.base.base.BaseVm
  * @date :2022/3/14
  */
 
-class MainFragmentVm:BaseVm<MainRepository>() {
+class MainFragmentVm:BaseVm() {
   private var currentFragment: Fragment?=null
+  private val mRepository=MainRepository()
     /**
      * 切换 Fragment
      */

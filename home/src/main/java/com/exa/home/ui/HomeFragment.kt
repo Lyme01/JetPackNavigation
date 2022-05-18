@@ -16,12 +16,12 @@ class HomeFragment:BaseFragment<HomeVm,HomeFragmentBinding>(navigationBar = true
     }
 
     override fun initData() {
-        vm.getArticle()
+        vm.getArticle(success = {
+            binding.tv.text=it.total.toString()
+        })
     }
 
     override fun initListener() {
-        vm.articleBean.observe(this){
-            binding.tv.text=it.datas.apkLink
-        }
+
     }
 }

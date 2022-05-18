@@ -1,3 +1,3 @@
 package com.exa.base.bean
 
-data class BaseResponse<T>(var code: String, val message: String?, val data: T?, val success: Boolean)
+data class BaseResponse<T>(var errorCode: Int, val errorMsg: String?, val data: T)

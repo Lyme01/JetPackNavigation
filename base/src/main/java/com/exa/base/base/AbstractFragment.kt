@@ -21,7 +21,7 @@ import java.lang.reflect.Type
  * @date :2022/1/17
  */
 @Suppress("UNCHECKED_CAST")
-abstract class AbstractFragment<VM:BaseVm<*>>(private val backPress:Boolean):Fragment() {
+abstract class AbstractFragment<VM:BaseVm>(private val backPress:Boolean):Fragment() {
     protected lateinit var vm:VM
     protected lateinit var mContext: Context
     protected var isFirstLoad=true
@@ -55,7 +55,7 @@ abstract class AbstractFragment<VM:BaseVm<*>>(private val backPress:Boolean):Fra
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         lazyInit()
-        registerUiChange()
+//        registerUiChange()
         if (backPress){
             requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
                 onBackPressed()
@@ -106,17 +106,17 @@ abstract class AbstractFragment<VM:BaseVm<*>>(private val backPress:Boolean):Fra
      * 用于请求成功，错误的处理
      * 如：请求错误会触发 showPage 来显示错误页面
      */
-    private fun registerUiChange(){
-        vm.requestUi.showDialog.observe(viewLifecycleOwner,{
-            vm.showLoadingDialog(activity)
-        })
-        vm.requestUi.dismissDialog.observe(viewLifecycleOwner, {
-            vm.hideDialog()
-        })
-        vm.requestUi.toast.observe(viewLifecycleOwner, {
-            ToastUtil.instance.show(mContext, it)
-        })
-    }
+//    private fun registerUiChange(){
+//        vm.requestUi.showDialog.observe(viewLifecycleOwner,{
+//            vm.showLoadingDialog(activity)
+//        })
+//        vm.requestUi.dismissDialog.observe(viewLifecycleOwner, {
+//            vm.hideDialog()
+//        })
+//        vm.requestUi.toast.observe(viewLifecycleOwner, {
+//            ToastUtil.instance.show(mContext, it)
+//        })
+//    }
 
     /**
      * 是否需要懒加载

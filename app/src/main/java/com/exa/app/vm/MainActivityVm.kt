@@ -12,7 +12,7 @@ import com.exa.base.http.exc.AppException
  * @date :2022/3/14
  */
 
-class MainActivityVm:BaseVm<BaseRepository>() {
+class MainActivityVm:BaseVm() {
     val toastMsg=MutableLiveData<String>()
 
     fun exceptionHandle(v: View?, it:AppException){

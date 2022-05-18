@@ -12,9 +12,11 @@ import com.exa.base.util.SingleLiveEvent
  *  @description:app
  *  @date :2021/10/13 11:52
  **/
-class EventViewModel : BaseVm<BaseRepository>() {
+class EventViewModel : BaseVm() {
     val mainTab = SingleLiveEvent<Int>()
 
     val fail = SingleLiveEvent<AppException>()
+
+    var test=""
 
 }

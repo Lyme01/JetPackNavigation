@@ -7,13 +7,24 @@ android {
 
     defaultConfig {
         minSdk 21
-        targetSdk 30
+        targetSdk 28
         versionCode 1000
         versionName "1.0.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    productFlavors {
+        dev {
+            flavorDimensions 'debug'
+            buildConfigField 'String', 'BASE_URL', '"https://www.wanandroid.com"'
+        }
 
+        //正式包配置
+        prod {
+            flavorDimensions 'product'
+            buildConfigField 'String', 'BASE_URL', '"https://www.wanandroid.com"'
+        }
+    }
     viewBinding {
         enabled = true
     }
@@ -21,8 +32,8 @@ android {
     lintOptions {
         disable "Instantiatable"
     }
-    //... 即使你不使用DataBinding也要打开其开关
-    buildFeatures.dataBinding = true
+//    //... 即使你不使用DataBinding也要打开其开关
+//    buildFeatures.dataBinding = true
     buildFeatures {
         // Enables Jetpack Compose for this module
         compose = true

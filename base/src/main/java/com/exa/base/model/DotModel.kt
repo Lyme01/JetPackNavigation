@@ -1,6 +1,6 @@
 package com.exa.base.model
 
-import com.drake.brv.item.ItemPosition
+//import com.drake.brv.item.ItemPosition
 
 /**
  * @author wwq
