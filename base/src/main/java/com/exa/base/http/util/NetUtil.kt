@@ -2,9 +2,7 @@ package com.exa.base.http.util
 
 import android.view.View
 import androidx.lifecycle.viewModelScope
-import com.bumptech.glide.util.Util
 import com.exa.base.base.BaseVm
-import com.exa.base.base.eventVm
 import com.exa.base.bean.BaseResponse
 import com.exa.base.http.exc.AppException
 import com.exa.base.http.exc.ExceptionHandle
@@ -90,16 +88,15 @@ suspend fun <T> executeResponse(
     failed: (excpetion: AppException) -> Unit
 ) {
     coroutineScope {
-        when {
-            response.errorCode==0 -> {
-                success(response.data)
+        when (response.errorCode) {
+            0 -> {
+                response.data?.let { success(it) }
             }
             else -> {
                 failed(
                     AppException(
-                        response.errorMsg.toString(),
+                        response.errorCode,
                         response.errorMsg,
-                        response.errorMsg
                     )
                 )
             }
