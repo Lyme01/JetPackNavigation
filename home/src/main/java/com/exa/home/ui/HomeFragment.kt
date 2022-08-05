@@ -16,9 +16,7 @@ class HomeFragment:BaseFragment<HomeVm,HomeFragmentBinding>(navigationBar = true
     }
 
     override fun initData() {
-        vm.getArticle(success = {
-            binding.tv.text=it.total.toString()
-        })
+
     }
 
     override fun initListener() {

@@ -13,6 +13,9 @@ dependencies {
     testApi 'junit:junit:4.+'
     androidTestApi 'androidx.test.ext:junit:1.1.3'
     androidTestApi 'androidx.test.espresso:espresso-core:3.4.0'
+    //高德
+    implementation fileTree(include: '*.jar', dir: 'libs')
+    api files('libs/AMap3DMap_9.3.0_AMapSearch_9.2.0_AMapLocation_6.1.0_20220608.jar')
 
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
 
