@@ -6,8 +6,14 @@ import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.paging.RemoteMediator
+import com.exa.base.bean.BaseResponse
+import com.exa.base.http.exc.AppException
+import com.exa.base.http.exc.ExceptionHandle
 
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.*
 import java.lang.reflect.Method
 
 /**
@@ -46,6 +52,29 @@ abstract class BaseVm:ViewModel() {
     var isFinish = MutableLiveData<Boolean>()
 
     var toast = MutableLiveData<String>()
+
+
+    fun <T> doRequest(
+      block:suspend  () -> BaseResponse<T>,
+      success:(T) ->Unit,
+      onError:(AppException) -> Unit={},
+    ) =  viewModelScope.launch {
+        flow {
+            val response = block.invoke()
+            if (response.errorCode != 0) {
+                throw  AppException(response.errorCode, response.errorMsg)
+            }
+            emit(response)
+        }.flowOn(Dispatchers.IO).onStart {
+
+        }.catch { exc,->
+            onError.invoke(ExceptionHandle.handleException(exc))
+        }.onCompletion {
+
+        }.collect{
+            it.data?.let { it1 -> success.invoke(it1) }
+        }
+    }
 
 //    /**
 //     * 网络请求UI管理，根据请求是否显示/隐藏 Dialog，错误页面等

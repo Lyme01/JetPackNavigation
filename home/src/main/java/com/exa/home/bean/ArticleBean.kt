@@ -1,5 +1,8 @@
 package com.exa.home.bean
 
+import com.exa.base.bean.BaseResponse
+import kotlinx.coroutines.flow.Flow
+
 /**
  * @author wwq
  * @description:
@@ -7,14 +10,14 @@ package com.exa.home.bean
  */
 
 data class ArticleBean(
-    val curPage: Int,
-    val datas:  DataX,
-    val offset: Int,
-    val over: Boolean,
-    val pageCount: Int,
-    val size: Int,
-    val total: Int
-){
+    val curPage: Int=0,
+    val datas: List<DataX>?=null,
+    val offset: Int=0,
+    val over: Boolean=false,
+    val pageCount: Int=0,
+    val size: Int=0,
+    val total: Int=0
+) {
     data class DataX (
         val apkLink: String,
         val audit: Int,
