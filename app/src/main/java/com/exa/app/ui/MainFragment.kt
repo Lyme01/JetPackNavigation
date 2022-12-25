@@ -1,10 +1,11 @@
 package com.exa.app.ui
 
-import android.widget.RadioButton
+import androidx.fragment.app.viewModels
+import com.exa.app.R
+import com.exa.app.action.MainAction
 import com.exa.app.databinding.FragmentMainBinding
-import com.exa.app.vm.MainFragmentVm
+import com.exa.app.vm.MainFragmentViewModel
 import com.exa.base.base.BaseFragment
-import com.exa.base.base.eventVm
 
 /**
  * @author wwq
@@ -12,21 +13,37 @@ import com.exa.base.base.eventVm
  * @date :2022/3/14
  */
 
-class MainFragment:BaseFragment<MainFragmentVm,FragmentMainBinding>(true) {
-    override fun initData() {
-        binding.mainRb1.isChecked=true
+class MainFragment: BaseFragment<FragmentMainBinding>() {
+    private val  vm by viewModels<MainFragmentViewModel>()
+
+    override fun loadPageData() {
+        vm.dispatch(MainAction.Switch(childFragmentManager,0))
+        selectBar()
     }
 
-    override fun initListener() {
-        binding.mainRg.setOnCheckedChangeListener { _, i ->
-       vm.switchFragment(childFragmentManager,i)
-        }
-        eventVm.mainTab.observe(this){
-            binding.mainRg.findViewById<RadioButton>(vm.getButtonId(it)).isChecked=true
+    private fun selectBar(){
+        binding.mainRg.setOnItemSelectedListener{ item->
+            when(item.itemId){
+                R.id.home_item->{
+                    vm.dispatch(MainAction.Switch(childFragmentManager,0))
+                }
+                R.id.type_item->{
+                    vm.dispatch(MainAction.Switch(childFragmentManager,1))
+                }
+
+                R.id.setting_item->{
+                    vm.dispatch(MainAction.Switch(childFragmentManager,2))
+                }
+
+            }
+            return@setOnItemSelectedListener true
         }
     }
 
-    override fun onBackPressed() {
-        exitApp()
+
+
+    override fun registerUIStateCallback() {
+
     }
+
 }

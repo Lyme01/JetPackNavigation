@@ -1,16 +1,10 @@
 package com.exa.app.ui
 
 
-import android.view.View
 
 import com.exa.app.R
-import com.exa.app.adapter.WelcomeAdapter
-import com.exa.app.databinding.ItemDotBinding
 import com.exa.app.databinding.WelcomeFragmentBinding
-import com.exa.app.vm.WelcomeVm
 import com.exa.base.base.BaseFragment
-import com.exa.base.base.eventVm
-import com.exa.base.ext.buildSpannableString
 import com.exa.base.ext.nav
 import com.exa.base.ext.navigateAction
 import com.exa.base.model.DotModel
@@ -21,10 +15,9 @@ import com.exa.base.model.DotModel
  * @date :2022/3/17
  */
 
-class WelcomeFragment : BaseFragment<WelcomeVm, WelcomeFragmentBinding>(false) {
-    private val welcomeAdapter = WelcomeAdapter()
+class WelcomeFragment : BaseFragment<WelcomeFragmentBinding>() {
 
-    override fun initData() {
+//    override fun initData() {
 //        binding.rvDot.linear(HORIZONTAL, scrollEnabled = false).setup {
 //            addType<DotModel>(R.layout.item_dot)
 //            onBind {
@@ -39,12 +32,11 @@ class WelcomeFragment : BaseFragment<WelcomeVm, WelcomeFragmentBinding>(false) {
 //                R.mipmap.ic_guide3
 //            )
 //        )
-        nav().navigateAction(R.id.action_to_global_main)
-        eventVm.test="6666"
-    }
 
-    override fun initViews(root: View) {
-        super.initViews(root)
+//    }
+
+//    override fun initViews(root: View) {
+//        super.initViews(root)
 //        binding.tv.buildSpannableString {
 //            addText("我已详细阅读并同意"){
 //                setFontSize(16,true)
@@ -71,15 +63,22 @@ class WelcomeFragment : BaseFragment<WelcomeVm, WelcomeFragmentBinding>(false) {
 //                }
 //            }
 //        })
-    }
+//    }
 
-    private var dots=mutableListOf(
+    private var dots = mutableListOf(
         DotModel(true),
         DotModel(false),
         DotModel(false)
     )
 
-    override fun initListener() {
+
+
+    override fun registerUIStateCallback() {
+
+    }
+
+    override fun loadPageData() {
+        nav().navigateAction(R.id.action_to_global_main)
         binding.btnApplyNow.setOnClickListener {
 
         }

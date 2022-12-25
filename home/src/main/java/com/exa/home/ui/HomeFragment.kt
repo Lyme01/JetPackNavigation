@@ -1,20 +1,12 @@
 package com.exa.home.ui
 
-import android.widget.Toast
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.lifecycleScope
+
+import androidx.fragment.app.viewModels
 import com.exa.base.base.BaseFragment
-import com.exa.base.base.appContext
-import com.exa.base.base.eventVm
 import com.exa.base.ext.flowWithLifecycle
-import com.exa.base.ext.launchAndRepeatWithViewLifecycle
-import com.exa.base.util.ToastUtil
 import com.exa.home.databinding.HomeFragmentBinding
-import com.exa.home.vm.HomeVm
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
+import com.exa.home.state.HomeState
+import com.exa.home.vm.HomeViewModel
 
 /**
  * @author wwq
@@ -22,28 +14,33 @@ import kotlinx.coroutines.launch
  * @date :2022/3/17
  */
 
-class HomeFragment:BaseFragment<HomeVm,HomeFragmentBinding>(navigationBar = true) {
-    override fun initTitle(): String {
-        return "首页"
-    }
+class HomeFragment: BaseFragment<HomeFragmentBinding>(navigationBar = true) {
+    private val vm by viewModels<HomeViewModel>()
 
-    override fun initData() {
+
+    override fun loadPageData() {
         vm.getArticle()
         binding.tv.setOnClickListener {
-            vm.getToast(true)
+
+        }
+      }
+
+    override fun registerUIStateCallback() {
+        vm.uiState.flowWithLifecycle(this){
+            when(it){
+                is HomeState.Success->{
+                    binding.tv.text=it.articleBean.curPage.toString()
+
+                }
+                is HomeState.Title->{
+                    println(it.titleBean.title)
+                    setTitle(it.titleBean)
+                }
+            }
         }
     }
 
 
-
-    override fun initListener() {
-      vm.articleBeanFlow.flowWithLifecycle(this){
-          binding.tv.text=it.total.toString()
-      }
-      vm.toastFlow.flowWithLifecycle(this){
-          Toast.makeText(appContext,it.toString(),Toast.LENGTH_LONG).show()
-      }
-
-
-    }
 }
+
+

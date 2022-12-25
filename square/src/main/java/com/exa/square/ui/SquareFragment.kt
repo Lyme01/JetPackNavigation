@@ -2,7 +2,6 @@ package com.exa.square.ui
 
 import com.exa.base.base.BaseFragment
 import com.exa.square.databinding.SquareFragmentBinding
-import com.exa.square.vm.SquareVm
 
 /**
  * @author wwq
@@ -10,5 +9,15 @@ import com.exa.square.vm.SquareVm
  * @date :2022/3/17
  */
 
-class SquareFragment:BaseFragment<SquareVm,SquareFragmentBinding>() {
+class SquareFragment: BaseFragment<SquareFragmentBinding>() {
+
+
+    override fun loadPageData() {
+
+    }
+
+
+    override fun registerUIStateCallback() {
+
+    }
 }
