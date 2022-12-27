@@ -2,6 +2,9 @@ package com.exa.home.vm
 
 import android.widget.Toast
 import com.exa.base.base.*
+import com.exa.base.ext.nav
+import com.exa.base.ext.navigateAction
+import com.exa.home.R
 import com.exa.home.action.HomeAction
 import com.exa.home.http.api
 import com.exa.home.state.HomeState
@@ -15,22 +18,23 @@ import com.exa.home.state.HomeState
 class HomeViewModel : BaseViewModel<HomeState,HomeAction>() {
 
   init {
-
-     handleAction {
-       when(it){
-           is HomeAction.Toast->{
-               Toast.makeText(appContext,it.msg,Toast.LENGTH_LONG).show()
-           }
-       }
-     }
+      handleAction {
+          when(it){
+              is HomeAction.GetArticle->{
+                  getArticle()
+              }
+              is HomeAction.GoPage -> {
+                  nav(it.fragment).navigateAction(R.id.action_to_global_main)
+              }
+          }
+      }
   }
 
 
-    fun getArticle() {
+    private fun getArticle() {
         doRequest({
             api.getArticle()
         }, success = {
-
             _state.value=HomeState.Success(it)
         }, {
             println("yyyy")
@@ -44,7 +48,6 @@ class HomeViewModel : BaseViewModel<HomeState,HomeAction>() {
 
 
     override fun initStates():HomeState{
-
         return HomeState.Init
     }
 }

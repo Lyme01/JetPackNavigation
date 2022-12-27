@@ -24,7 +24,7 @@ abstract class BaseViewModel<State:UiState,Effect:Action>:ViewModel() {
         }
     }
 
-    fun handleAction(action: (effect:Effect)->Unit){
+   protected fun handleAction(action: (effect:Effect)->Unit){
         viewModelScope.launch {
             userIntent.collectLatest {
                 action.invoke(it)

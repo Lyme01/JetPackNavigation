@@ -7,17 +7,20 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.exa.base.R
-import com.exa.base.bean.TitleBean
+import com.exa.base.action.CommonAction
 import com.exa.base.util.StatusBarUtil
 import com.exa.base.view.TextImageView
 import java.lang.reflect.ParameterizedType
 
 abstract class BaseFragment<VB : ViewBinding>(
     private val navigationBar: Boolean = false,
-    val backPress: Boolean = false
+    private val hasLeft:Boolean=true,
+    private val backPress: Boolean = false
 ) : Fragment() {
     protected lateinit var binding: VB
     private var mHasLoadedData = false
@@ -55,24 +58,27 @@ abstract class BaseFragment<VB : ViewBinding>(
             initNavigationBar(view)
         }
         registerUIStateCallback()
+        if (backPress){
+            requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
+                onBackPressed()
+            }
+        }
         super.onViewCreated(view, savedInstanceState)
     }
 
 
     private fun initNavigationBar(view:View){
         view.findViewById<LinearLayout>(R.id.action_bar_root).addView(binding.root)
-        view.findViewById<TextView>(R.id.action_bar_text_title).text = setTitle().title
-        if (setTitle().hasLeft){
-            view.findViewById<ImageView>(R.id.action_bar_img_left).apply {
-                setTitle().leftImage?.let { setImageResource(it) }
-                setOnClickListener { setTitle().leftClick.invoke() }
+        view.findViewById<TextView>(R.id.action_bar_text_title).text = title
+        val left = view.findViewById<ImageView>(R.id.action_bar_img_left)
+        if (hasLeft){
+            left.setImageResource(R.mipmap.common_ic_back)
+            left.setOnClickListener {
+                onBackPressed()
             }
         }
-       view.findViewById<TextImageView>(R.id.action_bar_text_right).apply {
-           setTitle().rightImage?.let { setImage(it) }
-           setOnClickListener {setTitle().rightClick}
-           text=setTitle().rightText
-       }
+        val right = view.findViewById<TextImageView>(R.id.action_bar_text_right)
+        modifyActionBar(left, right)
 
     }
 
@@ -86,12 +92,9 @@ abstract class BaseFragment<VB : ViewBinding>(
         resumeData()
     }
 
-    open fun resumeData() {
+    open fun resumeData() {}
 
-    }
-    open fun setTitle(titleBean: TitleBean= TitleBean()):TitleBean{
-        return titleBean
-    }
+    open var title:String=""
     open fun modifyActionBar(left: ImageView, right: TextImageView) {}
     open fun initTitle() = ""
     /**
@@ -101,4 +104,7 @@ abstract class BaseFragment<VB : ViewBinding>(
     open var isDark:Boolean=true
     abstract fun registerUIStateCallback()
     abstract fun loadPageData()
+    open fun  onBackPressed(){
+        findNavController().popBackStack()
+    }
 }

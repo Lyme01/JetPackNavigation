@@ -3,9 +3,11 @@ package com.exa.base.ext
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
 import com.exa.base.R
 
@@ -15,6 +17,14 @@ import com.exa.base.R
  */
 fun Fragment.nav(): NavController {
     return findNavController()
+}
+
+fun ViewModel.nav(fragment: Fragment): NavController {
+    return findNavController(fragment)
+}
+
+fun ViewModel.popBack(fragment: Fragment): NavController{
+    return findNavController(fragment)
 }
 
 fun nav(view: View): NavController {
