@@ -1,14 +1,9 @@
 package com.exa.app.ui
 
 
-import android.os.Build
 import android.os.Bundle
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import com.exa.app.R
 import com.exa.app.databinding.ActivityMainBinding
 
 

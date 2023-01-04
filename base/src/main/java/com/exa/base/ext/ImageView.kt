@@ -12,12 +12,12 @@ import com.exa.base.util.GlideUtil
  * @date :2022/1/17
  */
 
-fun ImageView.load(any:Any)=GlideUtil.load(this,any)
+//fun ImageView.load(any:Any)=GlideUtil.load(this,any)
 
 /**
  * 加载圆形图片
  */
-fun ImageView.loadCircle(any: Any) = GlideUtil.loadCircle(this, any)
+//fun ImageView.loadCircle(any: Any) = GlideUtil.loadCircle(this, any)
 
 /**
  * 加载带边框圆形图片
@@ -29,5 +29,5 @@ fun ImageView.loadCircle(any: Any) = GlideUtil.loadCircle(this, any)
  * 加载圆角图片
  * @param dimenRes 圆角的大小
  */
-fun ImageView.loadRound(any: Any, @DimenRes dimenRes: Int = R.dimen.dp_5) =
-    GlideUtil.loadRound(this, any, dimenRes)
+//fun ImageView.loadRound(any: Any, @DimenRes dimenRes: Int = R.dimen.dp_5) =
+//    GlideUtil.loadRound(this, any, dimenRes)

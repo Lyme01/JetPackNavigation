@@ -1,14 +1,11 @@
 package com.exa.home.ui
 
 
-import android.widget.ImageView
-import androidx.compose.runtime.collectAsState
 import androidx.fragment.app.viewModels
 import com.exa.base.action.CommonAction
 import com.exa.base.base.BaseFragment
 import com.exa.base.base.eventVm
 import com.exa.base.ext.flowWithLifecycle
-import com.exa.base.view.TextImageView
 import com.exa.home.R
 import com.exa.home.action.HomeAction
 import com.exa.home.databinding.HomeFragmentBinding
@@ -39,7 +36,7 @@ class HomeFragment: BaseFragment<HomeFragmentBinding>(navigationBar = true,false
                 is HomeState.Success->{
                     binding.tv.text=it.articleBean.curPage.toString()
                 }
-                HomeState.Init -> {
+                is HomeState.Init -> {
 
                 }
             }

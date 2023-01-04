@@ -32,10 +32,7 @@ android {
     }
 //    //... 即使你不使用DataBinding也要打开其开关
 //    buildFeatures.dataBinding = true
-    buildFeatures {
-        // Enables Jetpack Compose for this module
-        compose = true
-    }
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -44,11 +41,7 @@ android {
 
     kotlinOptions {
         jvmTarget = '1.8'
-        useIR = true
     }
 
-    composeOptions {
-        kotlinCompilerVersion = "1.5.31"
-        kotlinCompilerExtensionVersion = "1.0.5"
-    }
+
 }

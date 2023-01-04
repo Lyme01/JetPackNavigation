@@ -36,7 +36,7 @@ object AppRetrofit {
         val okhttp = getOkhttpClick()
 
         return Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl("https://www.wanandroid.com")
             .client(okhttp)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
